@@ -1,0 +1,22 @@
+<h2 class="sub-header">标签管理</h2>
+<div class="table-responsive">
+    <a class="btn btn-success pull-right" routerLink="/tags/new">新增标签</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>分类名称</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tagList">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>
+                    <a routerLink="/tags/edit">编辑</a>
+                    <a (click)="deleteTag(item.id,$event)" href="#">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
