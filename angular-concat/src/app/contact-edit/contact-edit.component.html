@@ -1,0 +1,18 @@
+<h2 class="sub-header">编辑联系人</h2>
+<div class="table-responsive">
+    <form (submit)="editContact(formData.id)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">姓名</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="name" name="name" [(ngModel)]="formData.name" />
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">邮箱</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" [(ngModel)]="formData.email" />
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPhone">电话</label>
+            <input type="phone" class="form-control" id="exampleInputPhone" placeholder="phone" name="phone" [(ngModel)]="formData.phone" />
+        </div>
+        <button type="submit" class="btn btn-info">保存</button>
+    </form>
+</div>

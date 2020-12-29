@@ -1,0 +1,63 @@
+<h2 class="sub-header">新增联系人</h2>
+<form 
+    (submit)="addContact()"
+    #form="ngForm"    
+>
+    <div class="form-group">
+        <label for="exampleInputEmail1">姓名</label>
+        <input 
+            type="email" 
+            class="form-control" 
+            id="exampleInputEmail1" 
+            placeholder="请输入联系人姓名"
+            name="name"
+            [(ngModel)]="formData.name"
+            autocomplete="off"
+            required
+            #name="ngModel"
+        />
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        请输入联系人姓名
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">邮箱</label>
+        <input 
+            type="email" 
+            class="form-control" 
+            id="exampleInputEmail1" 
+            placeholder="请输入联系人Email"
+            name="email"
+            [(ngModel)]="formData.email"
+            autocomplete="off"
+            required
+            #email="ngModel"
+        />
+    </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        请输入联系人邮箱
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPhone">电话</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="exampleInputPhone" 
+            placeholder="请输入联系人电话"
+            name="phone"
+            [(ngModel)]="formData.phone"
+            autocomplete="off"
+            required
+            #phone="ngModel"
+        />
+    </div>
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+        请输入联系人电话
+    </div>
+    <button 
+        type="submit" 
+        class="btn btn-info"
+        [disabled]="form.form.invalid"
+    >创建</button>
+</form>
